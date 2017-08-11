@@ -1,31 +1,31 @@
 import java.io.IOException;
 
 public class SpamScr {
-	
+
 	static final double VERSION = 0.1;
-	
+
 	public static void main(String[] args) {
 		@SuppressWarnings("unused")
 		MainWind w = new MainWind();
-		
+
 	}
-	
-	public static void send(String s, int anz){
-		if(s.equals("")){
+
+	public static void send(String s, int anz) {
+		if (s.equals("")) {
 			s = " ";
 		}
-		s = "\""+s+"\"";
+		s = "\"" + s + "\"";
 		String path = ClassLoader.getSystemClassLoader().getResource(".").getPath();
-		if(path.endsWith("/bin/")){
-			path = path.substring(1, path.length()-4)+"spam.vbs";
-		}else{
-			path = path.substring(1)+"spam.vbs";
+		if (path.endsWith("/bin/")) {
+			path = path.substring(1, path.length() - 4) + "spam.vbs";
+		} else {
+			path = path.substring(1) + "spam.vbs";
 		}
-		
+
 		System.out.println(path);
-		
+
 		try {
-			Runtime.getRuntime().exec("wscript "+path+" "+s+" "+anz);
+			Runtime.getRuntime().exec("wscript " + path + " " + s + " " + anz);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
