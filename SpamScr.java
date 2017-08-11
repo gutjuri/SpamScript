@@ -5,8 +5,7 @@ public class SpamScr {
 	static final double VERSION = 0.1;
 
 	public static void main(String[] args) {
-		@SuppressWarnings("unused")
-		MainWind w = new MainWind();
+		new MainWind();
 
 	}
 
